@@ -7,6 +7,7 @@ header{
     justify-content: center;
     align-items: center;
     background-color: palevioletred;
+    
 }
 
 .content{
@@ -22,8 +23,82 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width:100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 86px;
+}
+
+
+main{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%
+}
+
+
+
+#mainContent{
+    background-color: rgb(64, 190, 192);
+    display: flex;
+    border: 1px solid darkslategrey;
+    width: 100%;
+    justify-content: center;
     
 }
+
+#restaurantContent{
+    background-color: red;
+    border: 1px solid black;
+    max-width: 1440px;
+    width: 100%;
+    height: 250vh; 
+}
+
+
+
+#sideBar{
+    background-color: deeppink;
+    display: flex;
+    flex-direction: column;
+    width: 344px;
+    height: 250vh;
+    border: 1px solid black;
+    position: relative;
+    right: 0;
+    flex-shrink: 0;
+    align-items: center;
+    
+}
+
+#basket{
+    width: 344px;
+    height: 300px;
+    
+    background-color: white;
+    position: fixed;
+    top:86px;
+    right: 0;
+
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: palevioletred;
+}
+
+#footerContent{
+    height: 86px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 @media (max-width: 800px){
     
