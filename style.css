@@ -4,10 +4,12 @@
 
 html{
     scroll-behavior: smooth;
+    
 }
 
 body{
     margin:0;
+    
 }
 
 header{
@@ -141,7 +143,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 344px;
-    height: 250vh;
+    height: 100%;
     border: 1px solid black;
     position: relative;
     right: 0;
