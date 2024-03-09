@@ -1,3 +1,4 @@
+"use strict";
 
 //onload Functions
 
@@ -35,8 +36,41 @@ function renderContent(){
 }
 
 function renderBasket(){
+    let content = document.getElementById('basketContent');
+    content.innerHTML= ``;
 
+    if (basketMenuID[0]){
+        content.innerHTML += `<table id="basketTable"> </table>`;
+
+        let table = document.getElementById('basketTable');
+        table.innerHTML += `<tr>Hallo</tr>`;
+
+    for(let index = 0; index < basket.length; index++){
+            table.innerHTML += basketContentHTML(index);
+        }
+
+
+    renderBasketFooter();
+
+
+    } else {
+        content.innerHTML += `
+            <div> Bitte fügen Sie Waren zum Warenkorb hinzu.</div>
+        `;
+    }
+
+
+    
+
+    
+    
 }
+
+function renderBasketFooter(){
+    document.getElementById('basketFooter').innerHTML = basketFootHTML();
+}
+
+
 
 
 //templateHTML
@@ -59,6 +93,31 @@ function categoryyHTML(index){
     <div> ${menus[index].categoryName} <div>
     `;
 }
+
+
+
+
+
+function basketContentHTML(index){
+    return `
+        <tr>
+            <td>Eintrag 1 </td>
+            <td>Eintrag 2 </td>
+        </tr>
+    
+
+    `;
+}
+
+function basketFootHTML(){
+    return `
+   
+
+    <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${basketCalc.tax}.</div>
+    `;
+}
+
+
 
 
 function menuHTML(index){
@@ -136,29 +195,29 @@ let menus = [
     {}
 ];
 
-let basket = [
-            {
+// Warenkorb
+let basketMenuID = [];
+let basketMenuAmount = [];
+let basketMenuAnnotation =[];
+     
 
-                menuID: '',
-                menuAmount: '',
-                Price:'',
-                summedPrice:'',
-                annotation: '',
+
+
+
             
-            
-            },
 
 
 
 
-            {
+
+
+let basketCalc = [{
                 subtotal: '',
                 deliveryCost: '',
-                total: ''
+                total: '',
+                tax: ''
             
             }
 
-
-
-
 ]
+
