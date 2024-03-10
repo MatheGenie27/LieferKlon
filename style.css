@@ -134,9 +134,71 @@ main{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: 10px;
 }
 
+.menuContainer{
+    max-width:98%;
+    width: 98%;
+    height: fit-content;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding:5px;
+    gap:5px;
+    
+}
 
+.menuContainerHeadRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    
+}
+
+.menuContainerHeadName{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.menuContainerAddButton{
+    height:26px;
+    width:26px;
+    background-color: blue;
+    border-radius: 100%;
+
+}
+
+.menuContainerAddButton:hover{
+    cursor: pointer;
+}
+
+.menuContainerDescriptionRow{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.menuImage{
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    background-color: pink;
+    
+}
+
+.menuContainerPriceRow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.menuContainerPrice{
+    font-weight: bold;
+}
 
 #sideBar{
     background-color: deeppink;
@@ -168,6 +230,21 @@ main{
 
 }
 
+.amountButtonBasket{
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.amountButtonBasket:hover{
+    cursor: pointer;
+}
 
 footer{
     display: flex;

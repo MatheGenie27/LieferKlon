@@ -1,4 +1,16 @@
 "use strict";
+//Variablen
+
+// Warenkorb
+let basketPosition = 0;
+let basketMenuID = [];
+let basketMenuAmount = [];
+let summedPrice=[];
+ 
+let subtotal = 0;
+let deliveryCost = 2.99;
+let total;
+let tax;
 
 //onload Functions
 
@@ -7,6 +19,7 @@ function onload(){
     loadStorage('basket');
     renderContent();
     renderBasket();
+    
 }
 
 
@@ -38,19 +51,25 @@ function renderContent(){
 function renderBasket(){
     let content = document.getElementById('basketContent');
     content.innerHTML= ``;
+    content.innerHTML += `<table id="basketTable"> </table>`;
+    let table = document.getElementById('basketTable');
 
-    if (basketMenuID[0]){
-        content.innerHTML += `<table id="basketTable"> </table>`;
+      
+    
+    if (basketMenuID.length>0){
+        
 
-        let table = document.getElementById('basketTable');
-        table.innerHTML += `<tr>Hallo</tr>`;
+        
+        //table.innerHTML += basketTableHTML();
 
-    for(let index = 0; index < basket.length; index++){
+        for(let index = 0; index < basketMenuID.length; index++){
+            
             table.innerHTML += basketContentHTML(index);
-        }
-
-
-    renderBasketFooter();
+            }
+        
+        table.innerHTML += basketCalcHTML();    
+            
+        renderBasketFooter();
 
 
     } else {
@@ -99,21 +118,42 @@ function categoryyHTML(index){
 
 
 function basketContentHTML(index){
+    console.log(`Füge Tabelleninhalt hinzu für Index ${index}`)
     return `
         <tr>
-            <td>Eintrag 1 </td>
-            <td>Eintrag 2 </td>
+            <td><div class="amountButtonBasket" id="">-</div></td>
+            <td>${basketMenuAmount[index]} </td>
+            <td><div class="amountButtonBasket" id="">+</div></td>
+            <td>${getMenuName(basketMenuID[index])} </td>
+            <td>${summedPrice[index]} </td>
         </tr>
     
 
     `;
 }
 
+function basketCalcHTML(){
+     return `
+     <tr>
+        <td colspan="4">Zwischensumme </td>
+        <td> ${subtotal} </td>
+     </tr>
+     <tr>
+        <td colspan="4">Lieferung </td>
+        <td> ${deliveryCost}</td>
+     </tr>
+     <tr>  
+        <td colspan="4">Total</td>
+        <td> ${total}</td> 
+     </tr>
+     `;
+}
+
 function basketFootHTML(){
     return `
    
 
-    <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${basketCalc.tax}.</div>
+    <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax}.</div>
     `;
 }
 
@@ -122,8 +162,25 @@ function basketFootHTML(){
 
 function menuHTML(index){
     return  `
-    <div>Ich bin das Menü HTML</div>
-    <div> ${menus[index].menuName}</div>
+    <div class="menuContainer">
+        <div class="menuContainerHeadRow">
+            <div class= "menuContainerHeadName"> 
+                ${menus[index].menuName}
+            </div>
+            <div class= "menuContainerAddButton" id="addButton${menus[index].menuID}" onclick="addToBasket(${menus[index].menuID})">
+                addButton
+            </div>
+        </div>
+        <div class="menuContainerDescriptionRow">
+            <div class="menuContainerDescriptionText">${menus[index].menuDescription}</div>
+            <div class="menuContainerDescriptionImage"> <img class= "menuImage" id="menuImage${index}" src="${menus[index].menuImage}"> </div>
+        </div>
+        <div class="menuContainerPriceRow">
+            <div class="menuContainerPrice">
+                ${menus[index].menuPrice} €
+            </div>
+        </div>
+    </div>
     `;
 }
 
@@ -134,10 +191,35 @@ function basketHMTL(){
     `;
 }
 
+//Datenabfrage
+function getMenuName(id){
+    for (let i = 0; i < menus.length; i++){
+        if (menus[i].menuID== id){
+            return menus[i].menuName;
+        }
+    }
+}
+
+
+
 //Datenmanipulation
 
-function addToBasket(element){
-
+function addToBasket(thisID){
+      
+    for (let i = 0; i < menus.length; i++){
+        if (menus[i].menuID == thisID){
+            basketPosition++;
+            basketMenuID.push(thisID);
+            basketMenuAmount.push(1);
+        }
+    
+    }
+    console.log(`Es wurden hinzugefügt ID ${basketMenuID}, Menge ${basketMenuAmount}`);
+    
+    
+    calcBasket();
+    renderBasket();
+    
 
 }
 
@@ -146,19 +228,46 @@ function deleteFromBasket(element){
 }
 
 function calcSummedPrice(){
+    summedPrice = [];
+    
+    for (let i = 0; i < basketMenuID.length; i++ ){
+        for (let j = 0; j <menus.length; j++){
+            if(basketMenuID[i] == menus[j].menuID){
+                let price = menus[j].menuPrice;
+                let amount = basketMenuAmount[i];
+                summedPrice.push(Math.round(price * amount * 100)/100);
 
+            }
+        }
+    }
+
+    
+}
+
+function calcBasket(){
+    calcSummedPrice();
+    calcSubTotal();
+    calcTotal();
+    calcTax();
 }
 
 function calcSubTotal(){
+   subtotal = 0;
+    for (let i =0; i<summedPrice.length; i++){
+        console.log("Rechenschritt Zwischensumme");
+        subtotal = Math.round((subtotal + summedPrice[i])*100)/100;
+    }  
+    console.log(summedPrice)
+    console.log(`Zwischensumme ${subtotal}`);
 
 }
 
 function calcTotal(){
-
+    total = Math.round( subtotal + deliveryCost *100)/100;
 }
 
 function calcTax(){
-    
+    tax = Math.round(total / 107 * 7 *100)/100;
 }
 
 
@@ -181,25 +290,27 @@ let menus = [
 
     {  
     type:'menu',    
-    menuID: 'id1',
+    menuID: 1,
     menuCategory: 'category1',    
     menuName: 'menuName1',
     menuDescription: 'menuDescription1',
     menuImage: 'ImageUrl1',
-    menuPrice: '14,99'
+    menuPrice: '14.99'
 
 
 
     },
 
-    {}
+    {type:'menu',    
+    menuID: 2,
+    menuCategory: 'category1',    
+    menuName: 'menuName2',
+    menuDescription: 'menuDescription1',
+    menuImage: 'ImageUrl2',
+    menuPrice: '17.99'}
 ];
 
-// Warenkorb
-let basketMenuID = [];
-let basketMenuAmount = [];
-let basketMenuAnnotation =[];
-     
+
 
 
 
@@ -211,13 +322,4 @@ let basketMenuAnnotation =[];
 
 
 
-let basketCalc = [{
-                subtotal: '',
-                deliveryCost: '',
-                total: '',
-                tax: ''
-            
-            }
-
-]
 
