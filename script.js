@@ -263,7 +263,7 @@ function calcSubTotal(){
 }
 
 function calcTotal(){
-    total = Math.round( subtotal + deliveryCost *100)/100;
+    total = Math.round((subtotal + deliveryCost) *100)/100;
 }
 
 function calcTax(){
