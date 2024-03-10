@@ -121,9 +121,9 @@ function basketContentHTML(index){
     console.log(`Füge Tabelleninhalt hinzu für Index ${index}`)
     return `
         <tr>
-            <td><div class="amountButtonBasket" id="">-</div></td>
+            <td><div class="amountButtonBasket" id="" onclick="deleteFromBasket(${basketMenuID[index]})">-</div></td>
             <td>${basketMenuAmount[index]} </td>
-            <td><div class="amountButtonBasket" id="">+</div></td>
+            <td><div class="amountButtonBasket" id="" onclick="addToBasket(${basketMenuID[index]})">+</div></td>
             <td>${getMenuName(basketMenuID[index])} </td>
             <td>${summedPrice[index]} </td>
         </tr>
@@ -214,7 +214,7 @@ function addToBasket(thisID){
         }
     
     }
-    console.log(`Es wurden hinzugefügt ID ${basketMenuID}, Menge ${basketMenuAmount}`);
+    console.log(`Es wurden hinzugefügt ID ${basketMenuID}, Menge +1`);
     
     
     calcBasket();
@@ -225,6 +225,10 @@ function addToBasket(thisID){
 
 function deleteFromBasket(element){
 
+
+    console.log(`Es wurden entfernt ID ${basketMenuID}, Menge -1}`);
+    calcBasket();
+    renderBasket();
 }
 
 function calcSummedPrice(){

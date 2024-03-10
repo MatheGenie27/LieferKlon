@@ -206,7 +206,7 @@ main{
     flex-direction: column;
     width: 344px;
     height: 100%;
-    border: 1px solid black;
+    
     position: relative;
     right: 0;
     flex-shrink: 0;
@@ -216,7 +216,8 @@ main{
 
 #basket{
     width: 344px;
-    height: 300px;
+    min-height: 300px;
+    height: fit-content;
     
     background-color: white;
     position: fixed;
@@ -227,6 +228,7 @@ main{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow-y:hidden;
 
 }
 
