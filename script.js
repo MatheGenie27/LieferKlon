@@ -6,7 +6,7 @@
 let basketMenuID = [];
 let basketMenuAmount = [];
 let summedPrice=[];
- 
+let summedAmount = 0; 
 let subtotal = 0;
 let deliveryCost = 2.99;
 let total;
@@ -19,6 +19,8 @@ function onload(){
     loadStorage('basket');
     renderContent();
     renderBasket();
+    renderFooterToBasket();
+    checkMobileBasket();
     
 }
 
@@ -33,8 +35,18 @@ function storeStorage(){
 
 }
 
+//Modals
 
+function openModalBasket(){
+    scrollTo(0,0);
+    document.getElementById('modalBasket').classList.remove('noDisplay');
+    renderAll();
+    
+}
 
+function closeModalBasket(){
+    document.getElementById('modalBasket').classList.add('noDisplay');
+}
 
 //renderFunctions
 
@@ -87,6 +99,57 @@ function renderBasket(){
 
 function renderBasketFooter(){
     document.getElementById('basketFooter').innerHTML = basketFootHTML();
+}
+
+
+
+
+function renderMobileBasket(){
+    let content = document.getElementById('modalBasketContent');
+    content.innerHTML = '';
+    content.innerHTML += mobileBasketHeadandTableAndFooter();
+
+    let table = document.getElementById('mobileBasketTable');
+      
+    
+
+    if (basketMenuID.length>0){
+           
+        for(let index = 0; index < basketMenuID.length; index++){
+            
+            table.innerHTML += basketContentHTML(index);
+            }
+        
+        table.innerHTML += basketCalcHTML();    
+            
+        
+
+
+    } else {
+        content.innerHTML += `
+            <div> Bitte fügen Sie Waren zum Warenkorb hinzu.</div>
+        `;
+        
+    }
+
+    renderMobileBasketFooter()
+    
+
+}
+
+
+function renderMobileBasketFooter(){
+    let content = document.getElementById('mobileBasketFooter');
+    content.innerHTML ='';
+    content.innerHTML += MobileBasketFooterHTML();
+
+}
+
+
+function renderFooterToBasket(){
+    let content = document.getElementById('footerToBasket');
+    content.innerHTML='';
+    content.innerHTML += footerToBasketHTML();
 }
 
 
@@ -216,6 +279,52 @@ function basketHMTL(){
     `;
 }
 
+
+function footerToBasketHTML(){
+    return `
+    <div id="buttonToBasket" onclick="openModalBasket()"> 
+        <div id="buttonToBasketDescription" >
+            <div> <img id="basketIconmobileFooter" src=""> </div>
+            <div id="buttonToBasketText">Zum Warenkorb</div>
+            <div id="mobileFooterToBasketAmount">${summedAmount}</div>
+        </div> 
+    </div>
+    
+    `;
+}
+
+function mobileBasketHeadandTableAndFooter(){
+    return `
+    <div id="mobileBasketContainer">
+        <div><img id="modalCloseIcon" src="./icons/cross.png" onclick="closeModalBasket()" title="Warenkorb verlassen"></div>
+        <div id="mobileBasketHead">Warenkorb</div>
+        <table id="mobileBasketTable">
+        </table>
+        <div id="mobileBasketFooter">
+        </div>
+    </div>
+    `;
+}
+
+function mobileBasketHTML(){
+
+}
+
+function MobileBasketFooterHTML(){
+    if (subtotal > 0){
+    
+        return `
+       
+    
+        <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
+    
+        <div id="mobileOrderButtonBasketRow">    
+            <div id="mobileOrderButtonBasket">Jetzt kostenpflichtig bestellen</div>    
+        </div>    
+        `;}
+        else return '';
+}
+
 //Datenabfrage
 function getMenuName(id){
     for (let i = 0; i < menus.length; i++){
@@ -226,8 +335,33 @@ function getMenuName(id){
 }
 
 
+//Blendet den WarenknorbButton in der mobilen Ansicht aus und ein
+function checkMobileBasket(){
+    console.log(summedAmount);
+    if(summedAmount > 0){
+        document.getElementById('mobileFooterBasket').classList.remove('noDisplay');
+        document.getElementById('footerToBasket').classList.remove('noDisplay');
+    } else {
+        document.getElementById('mobileFooterBasket').classList.add('noDisplay');
+        document.getElementById('footerToBasket').classList.remove('noDisplay');
+    };
+}
+
+
 
 //Datenmanipulation
+
+function renderAll(){
+    calcBasket();
+    checkMobileBasket();
+    renderBasket();
+    renderMobileBasket();
+    renderContent();
+    renderFooterToBasket();
+}
+
+
+
 
 function menuAddSymbol(ID){
     if (getIndexOfBasket(ID)>-1){
@@ -254,9 +388,7 @@ function addToBasket(thisID){
     }
     
     
-    calcBasket();
-    renderBasket();
-    renderContent();
+    renderAll();
     
 
 }
@@ -288,9 +420,7 @@ function deleteFromBasket(element){
     }
 
     
-    calcBasket();
-    renderBasket();
-    renderContent();
+    renderAll();
 }
 
 function calcSummedPrice(){
@@ -311,10 +441,19 @@ function calcSummedPrice(){
 }
 
 function calcBasket(){
+    calcSummedAmount();
     calcSummedPrice();
     calcSubTotal();
     calcTotal();
     calcTax();
+}
+
+function calcSummedAmount(){
+    summedAmount = 0;
+    for (let i =0; i< basketMenuAmount.length; i++){
+        
+        summedAmount = summedAmount + basketMenuAmount[i];
+    }  
 }
 
 function calcSubTotal(){
@@ -347,7 +486,7 @@ let menus = [
     {
         type: 'category',
         categoryName: 'Vorspeisen',
-        categoryImage: './img/olive-oil-1412361_1280.jpg'
+        categoryImage: './img/tomatoes-1580273_1280.jpg'
 
     },
 

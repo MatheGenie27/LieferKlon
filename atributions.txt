@@ -1,1 +1,4 @@
 Alle Bilder entstammen von www.pixabay.de unter der dortigen Inhaltslizenz.
+
+UI-Icons von www.flaticon.com:
+UIcons by <a href="https://www.flaticon.com/uicons">Flaticon</a>
