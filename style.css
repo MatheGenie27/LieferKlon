@@ -9,21 +9,22 @@ html{
 
 body{
     margin:0;
-    
+    background-color: #EBD9B4;
 }
 
 header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: palevioletred;
+    background-color: #9DBC98
+    ;
     box-shadow: 0px rgba(0, 0, 0, 0.5);
     
 }
 
 .content{
     
-    border: 3px solid brown;
+    
     width: 100%;
     max-width: 1440px;
     padding-left: 160px;
@@ -42,7 +43,7 @@ header{
 
 
 main{
-    background-color: antiquewhite;
+    background-color:0 #EBD9B4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -52,10 +53,9 @@ main{
 
 
 #mainContent{
-    background-color: rgb(64, 190, 192);
+    background-color: #EBD9B4;
     display: flex;
     flex-direction: column;
-    border: 1px solid darkslategrey;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -63,7 +63,7 @@ main{
 }
 
 #restaurantHeader{
-    background-color: blue;
+    background-color: #EBD9B4;
     height: fit-content;
     width:100%;
     display: flex;
@@ -73,22 +73,32 @@ main{
 }
 
 #restaurantImage{
-    background-color: yellow;
+    background-color: #EBD9B4;
     width:100%;
-    height:200px;
     
+    
+}
+
+#restaurantImgImg{
+    width:100%;
+    height:300px;
+    object-fit: cover;
 }
 
 /* Soll das Logo in der Mitte sitzen?!? */
 #restaurantLogo{
-    background-color: grey;
-    width: 180px;
-    height: 80px;
-    border: 2px solid black;
-    border-radius: 75%;
+    background-color: #EBD9B4;
+        
     position: relative;
-    top: -45px;
+    top: -30px;
+    height: 50px;
 
+}
+
+#restaurantLogoLogo{
+    width:100px;
+    height:100px;
+    object-fit: cover;
 }
 
 #restaurantDetails{
@@ -106,6 +116,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
 #restaurantFoodCategories{
@@ -124,9 +135,18 @@ main{
 }
 
 
+#restaurantFoodCategories{
+    display: flex;
+    width: 98%;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px; 
+}
+
 #restaurantContent{
-    background-color: red;
-    border: 1px solid black;
+    background-color: #EBD9B4;
+    
     max-width: 1440px;
     width: 100%;
      
@@ -135,13 +155,50 @@ main{
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.categoryContainer{
+    width: 98%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom:5px;
+    margin-top:10px;
+    background-color: #F9EFDB;
+
+}
+
+.categoryImage{
+    width: 100%;
+    
+    border-radius: 8px;
+}
+
+.categoryImgImg{
+    width: 100%;
+    height:200px;
+    object-fit:cover;
+    border-radius: 8px;
+}
+
+.categoryName{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+    align-items:center ;
+    
 }
 
 .menuContainer{
     max-width:98%;
     width: 98%;
     height: fit-content;
-    background-color: white;
+    background-color: #F9EFDB;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -184,6 +241,9 @@ main{
 .menuContainerDescriptionRow{
     display: flex;
     justify-content: space-between;
+    padding-left:0;
+    padding-right:10px;
+
     
 }
 
@@ -192,6 +252,8 @@ main{
     height: 75px;
     object-fit: cover;
     background-color: pink;
+    border-radius: 8px;
+    
     
 }
 
@@ -206,11 +268,11 @@ main{
 }
 
 #sideBar{
-    background-color: deeppink;
+    background-color:rgb(175, 70, 70);
     display: flex;
     flex-direction: column;
     width: 344px;
-    height: 100%;
+    
     
     position: relative;
     right: 0;
@@ -219,21 +281,27 @@ main{
     
 }
 
+#sidebarContent{
+    height: 100%;
+}
+
 #basket{
-    width: 344px;
+    width: 336px;
     min-height: 300px;
     height: fit-content;
     
-    background-color: white;
+    background-color: #F9EFDB;
     position: fixed;
     top:86px;
-    right: 0;
+    right: 4px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     overflow-y:hidden;
+
+    border-radius: 8px;
 
 }
 
@@ -255,14 +323,14 @@ main{
 }
 
 #basketTable{
-    width: 340px;
+    width: 336px;
 }
 
 footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: palevioletred;
+    background-color: #9DBC98;
 }
 
 #footerContent{
@@ -274,6 +342,16 @@ footer{
 
 #mobileFooterBasket{
     display: none;
+}
+
+
+.infoButton{
+    width:22px;
+    height: 22px;
+}
+
+.infoButton:hover{
+    cursor: pointer;
 }
 
 

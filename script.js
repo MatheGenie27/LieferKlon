@@ -107,8 +107,18 @@ function menuContentHTML(index){
 
 function categoryyHTML(index){
     return `
-    <div> Ich bin eine Kategorie </div>
-    <div> ${menus[index].categoryName} <div>
+    <div class="categoryContainer">
+        <div class="categoryImage">
+            <img class="categoryImgImg" id="categoryImg${menus[index].categoryName}" src="${menus[index].categoryImage}">
+        </div>
+    
+        <div class="categoryName"> 
+            ${menus[index].categoryName} 
+        </div>
+        
+    
+    </div>
+    
     `;
 }
 
@@ -328,7 +338,7 @@ let menus = [
     {
         type: 'category',
         categoryName: 'Vorspeisen',
-        categoryImage: 'urlCategoryImage'
+        categoryImage: './img/olive-oil-1412361_1280.jpg'
 
     },
 
@@ -338,27 +348,27 @@ let menus = [
     type:'menu',    
     menuID: 1,
     menuCategory: 'category1',    
-    menuName: 'menuName1',
+    menuName: 'Minestra di patate e verdure',
     menuDescription: 'menuDescription1',
-    menuImage: 'ImageUrl1',
+    menuImage: './img/potato-soup-2152254_1280.jpg',
     menuPrice: '14.99'
     },
 
     {type:'menu',    
     menuID: 2,
     menuCategory: 'category1',    
-    menuName: 'menuName2',
+    menuName: 'Selezione di antipasti',
     menuDescription: 'menuDescription1',
-    menuImage: 'ImageUrl2',
+    menuImage: './img/melon-1524328_640.jpg',
     menuPrice: '17.99'
     },
 
     {type:'menu',    
     menuID: 3,
     menuCategory: 'category1',    
-    menuName: 'menuName3',
+    menuName: 'Insalata Caprese',
     menuDescription: 'menuDescription1',
-    menuImage: 'ImageUrl2',
+    menuImage: './img/salad-2487759_1280.jpg',
     menuPrice: '17.99'
     },
 
@@ -367,7 +377,7 @@ let menus = [
     {
         type: 'category',
         categoryName: 'Hauptgerichte',
-        categoryImage: 'urlCategoryImage'
+        categoryImage: './img/mediterranean-cuisine-2378758_1920.jpg'
 
     },
 
@@ -375,36 +385,36 @@ let menus = [
         type:'menu',    
         menuID: 4,
         menuCategory: 'category2',    
-        menuName: 'menuName4',
+        menuName: 'Bistecca di manzo',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl1',
+        menuImage: './img/food-3676796_1280.jpg',
         menuPrice: '14.99'
         },
     
         {type:'menu',    
         menuID: 5,
         menuCategory: 'category2',    
-        menuName: 'menuName5',
+        menuName: 'Pizza Margherita',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl2',
+        menuImage: './img/pizza-5275191_1280.jpg',
         menuPrice: '17.99'
         },
     
         {type:'menu',    
         menuID: 6,
         menuCategory: 'category2',    
-        menuName: 'menuName6',
+        menuName: 'Spaghetti al pomodoro con funghi e mandorle',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl2',
+        menuImage: './img/pasta-1533271_1280.jpg',
         menuPrice: '17.99'
         },
 
         {type:'menu',    
         menuID: 7,
         menuCategory: 'category2',    
-        menuName: 'menuName7',
+        menuName: 'Spiedini di verdure grigliate',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl2',
+        menuImage: './img/vegetable-skewer-3317060_640.jpg',
         menuPrice: '17.99'
         },
 
@@ -412,7 +422,7 @@ let menus = [
         {
             type: 'category',
             categoryName: 'Nachtisch',
-            categoryImage: 'urlCategoryImage'
+            categoryImage: './img/ai-generated-8587027_1280.png'
     
         },
     
@@ -422,27 +432,27 @@ let menus = [
         type:'menu',    
         menuID: 8,
         menuCategory: 'category3',    
-        menuName: 'menuName8',
+        menuName: 'Tiramisu',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl1',
+        menuImage: './img/dessert-3331009_1280.jpg',
         menuPrice: '7.99'
         },
     
         {type:'menu',    
         menuID: 9,
         menuCategory: 'category3',    
-        menuName: 'menuName9',
+        menuName: 'Bigné allungata',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl2',
+        menuImage: './img/eclair-3366430_640.jpg',
         menuPrice: '5.99'
         },
     
         {type:'menu',    
         menuID: 10,
         menuCategory: 'category3',    
-        menuName: 'menuName10',
+        menuName: 'Crema di fragole con frutti di bosco',
         menuDescription: 'menuDescription1',
-        menuImage: 'ImageUrl2',
+        menuImage: './img/strawberry-dessert-2191973_640.jpg',
         menuPrice: '12.99'
         }
 
