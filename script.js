@@ -75,6 +75,7 @@ function renderBasket(){
         content.innerHTML += `
             <div> Bitte fügen Sie Waren zum Warenkorb hinzu.</div>
         `;
+        renderBasketFooter();
     }
 
 
@@ -134,7 +135,7 @@ function basketContentHTML(index){
             <td align=center width="30">${basketMenuAmount[index]} </td>
             <td width="30"><div class="amountButtonBasket" id="" onclick="addToBasket(${basketMenuID[index]})">+</div></td>
             <td>${getMenuName(basketMenuID[index])} </td>
-            <td align=right width="100">${summedPrice[index].toFixed(2)}€ </td>
+            <td align=right width="100">${summedPrice[index].toFixed(2)} € </td>
         </tr>
     
 
@@ -148,11 +149,11 @@ function basketCalcHTML(){
      </tr>
      <tr>
         <td colspan="4">Zwischensumme </td>
-        <td align=right> ${subtotal.toFixed(2)}€ </td>
+        <td align=right> ${subtotal.toFixed(2)} € </td>
      </tr>
      <tr>
         <td colspan="4">Lieferung </td>
-        <td align=right> ${deliveryCost.toFixed(2)}€</td>
+        <td align=right> ${deliveryCost.toFixed(2)} €</td>
      </tr>
      <tr>
         <td colspan=4> </td>
@@ -160,17 +161,25 @@ function basketCalcHTML(){
      </tr>
      <tr>  
         <td colspan="4">Total</td>
-        <td align=right> ${total.toFixed(2)}€</td> 
+        <td align=right> ${total.toFixed(2)} €</td> 
      </tr>
      `;
 }
 
 function basketFootHTML(){
+    
+    if (subtotal > 0){
+    
     return `
    
 
     <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
-    `;
+
+    <div id="orderButtonBasketRow">    
+        <div id="orderButtonBasket">Jetzt kostenpflichtig bestellen</div>    
+    </div>    
+    `;}
+    else return '';
 }
 
 
