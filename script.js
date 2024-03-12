@@ -12,6 +12,9 @@ let deliveryCost = 2.99;
 let total;
 let tax;
 
+//andere
+let favorite = false;
+
 //Scrollposition
 let topPosition;
 
@@ -85,6 +88,7 @@ function openModalBasket(){
 
 function closeModalBasket(){
     document.getElementById('modalBasket').classList.add('noDisplay');
+    document.getElementById('modalBasket').innerHTML='';
 }
 
 //renderFunctions
@@ -166,7 +170,7 @@ function renderMobileBasket(){
 
     } else {
         content.innerHTML += `
-            <div> Bitte fügen Sie Waren zum Warenkorb hinzu.</div>
+            <div id="callToOrder"> Bitte fügen Sie Waren zum Warenkorb hinzu.</div>
         `;
         
     }
@@ -278,7 +282,7 @@ function basketFootHTML(){
     <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
 
     <div id="orderButtonBasketRow">    
-        <div id="orderButtonBasket">Jetzt kostenpflichtig bestellen</div>    
+        <div id="orderButtonBasket" class="orderButton" onclick="order()">Jetzt kostenpflichtig bestellen</div>    
     </div>    
     `;}
     else return '';
@@ -311,19 +315,13 @@ function menuHTML(index){
     `;
 }
 
-function basketHMTL(){
-    return `
-    Ich bin das Warenkorb HTML
-    
-    `;
-}
 
 
 function footerToBasketHTML(){
     return `
     <div id="buttonToBasket" onclick="openModalBasket()"> 
         <div id="buttonToBasketDescription" >
-            <div> <img id="basketIconmobileFooter" src=""> </div>
+            <div> <img id="basketIconmobileFooter" src="./icons/shopping-bag.png"> </div>
             <div id="buttonToBasketText">Zum Warenkorb</div>
             <div id="mobileFooterToBasketAmount">${summedAmount}</div>
         </div> 
@@ -336,7 +334,7 @@ function mobileBasketHeadandTableAndFooter(){
     return `
     <div id="mobileBasketContainer">
         <div><img id="modalCloseIcon" src="./icons/cross.png" onclick="closeModalBasket()" title="Warenkorb verlassen"></div>
-        <div id="mobileBasketHead">Warenkorb</div>
+        <div id="mobileBasketHead"><img class="basketIcon" src="./icons/shopping-bag.png">Warenkorb</div>
         <table id="mobileBasketTable">
         </table>
         <div id="mobileBasketFooter">
@@ -358,7 +356,7 @@ function MobileBasketFooterHTML(){
         <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
     
         <div id="mobileOrderButtonBasketRow">    
-            <div id="mobileOrderButtonBasket">Jetzt kostenpflichtig bestellen</div>    
+            <div id="mobileOrderButtonBasket" class="orderButton" onclick="order()">Jetzt kostenpflichtig bestellen</div>    
         </div>    
         `;}
         else return '';
@@ -374,16 +372,7 @@ function getMenuName(id){
 }
 
 
-//Blendet den WarenknorbButton in der mobilen Ansicht aus und ein
-function checkMobileBasket(){
-    if(summedAmount > 0){
-        document.getElementById('mobileFooterBasket').classList.remove('noDisplay');
-        document.getElementById('footerToBasket').classList.remove('noDisplay');
-    } else {
-        document.getElementById('mobileFooterBasket').classList.add('noDisplay');
-        document.getElementById('footerToBasket').classList.remove('noDisplay');
-    };
-}
+
 
 
 
@@ -391,14 +380,26 @@ function checkMobileBasket(){
 
 function renderAll(){
     calcBasket();
-    checkMobileBasket();
+    
     renderBasket();
-    renderMobileBasket();
+    
+    if(document.getElementById('modalBasket').className!='noDisplay'){
+    renderMobileBasket();}
     renderContent();
     renderFooterToBasket();
 }
 
 
+function cleanBasket(){
+    basketMenuAmount=[];
+    basketMenuID=[];
+    summedPrice=[];
+    summedAmount = 0; 
+    subtotal = 0;
+    total =0;
+    tax =0;
+    
+}
 
 
 function menuAddSymbol(ID){
@@ -512,6 +513,37 @@ function calcTax(){
     tax = Math.round(total / 107 * 7 *100)/100;
 }
 
+
+
+//Funktionalitäts-Funktionen
+
+
+function like(){
+     let img= document.getElementById('favoriteButtonRestaurant');
+    
+    if (favorite==true){
+       
+        img.src="./icons/heart(3).png"
+        favorite = false;
+    } else {
+        img.src="./icons/heart(2).png"
+        favorite=true;
+    }
+}
+
+function order(){
+    console.log("bestellt");
+
+    alert(`Eine Testbestellung in Höhe von ${total} Euro wurde ausgeführt`);
+
+    cleanBasket();
+    renderAll();
+
+}
+
+function sorry(){
+    alert("LieferKlon verfügt noch über keine Funktionalität zum Erstellen eines Accounts oder zur Auswahl anderer Restaurant. Sorry.");
+}
 
 
 //Daten

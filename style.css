@@ -34,6 +34,30 @@ header{
     
 }
 
+#headerImageImage{
+    width:50px;
+    height:50px;
+    object-fit: fill;
+}
+
+#headerImageImage:hover{
+    cursor: pointer;
+}
+
+#headerText{
+    font-size: 30px;
+}
+
+#headerNav{
+    width: 26px;
+    height:26px;
+    object-fit: fill;
+}
+
+#headerNav:hover{
+    cursor: pointer;
+}
+
 .content{
     
     
@@ -202,6 +226,7 @@ main{
     height: 10%;
     justify-content: center;
     align-items:center ;
+    font-size: 26px;
     
 }
 
@@ -313,8 +338,7 @@ main{
     padding:4px;
     border-radius: 8px;
 
-
-    
+ 
 
 }
 
@@ -322,18 +346,32 @@ main{
     position: fixed;
     top:86px;
     right: 4px;
+    transition: all 0.3s ease-out;
 }
 
 .basketScrolled{
     position: fixed;
     top:02px;
     right: 4px;
+    transition: all 0.3s ease-out;
 }
 
 
 #basketHeader{
     padding-top: 5px;
     padding-bottom:10px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.basketIcon{
+    width: 22px;
+    height:22px;
+    object-fit: cover;
+
 }
 
 .amountButtonBasket{
@@ -417,6 +455,15 @@ footer{
     display: none;
 }
 
+
+#callToOrder{
+    display: flex;
+    justify-content: center;
+    align-items: center;       
+}
+
+
+
 @media (max-width: 800px){
      .noDisplay{
         display: none;
@@ -489,6 +536,14 @@ footer{
 
     }
 
+    #mobileBasketHead{
+        font-size: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+    }
+
     #footerToBasket{
         display: flex;
         width:98%;
@@ -527,13 +582,14 @@ footer{
     #buttonToBasketText{
         height: fit-content;
         width: fit-content;
+        font-size: 26px;
         
     }
 
     #basketIconmobileFooter{
         width:50px;
         height: 50px;
-        background-color: pink;
+        
     }
 
     #mobileFooterToBasketAmount{
@@ -541,7 +597,7 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
+        color: black;
         font-weight: bold;
         background-color: #9DBC98;
         width:50px;
@@ -624,6 +680,8 @@ footer{
     #mobileOrderButtonBasket:hover{
         cursor: pointer;
     }
+
+    
 }
 
 

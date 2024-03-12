@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LieferKlon</title>
-
+    <link rel="icon" href="./icons/truck-moving.png" sizes="48x48" >
     <link href="style.css" rel="stylesheet">
     <script src="./script.js"></script>
 
@@ -13,9 +13,9 @@
     <header>
 
         <div  id="headerContent">
-            <div id="headerImage"> bin das Header Image</div>
-            <div>Speisekarte</div>
-            <div id="headerNavLinks"> Header Nav Links</div>
+            <a href="index.html" id="headerImage"> <img id="headerImageImage" src="./icons/truck-moving.png"></a>
+            <div id="headerText">Speisekarte</div>
+            <div id="headerNavLinks"> <img id="headerNav" src="./icons/menu-burger.png" tile="LieferKlonMenü" onclick="sorry()"> </div>
         </div>
     </header>
     <main>
@@ -36,7 +36,7 @@
                     </div>
                     <div id="restaurantDetailsRight">
                         <div id="restaurantInfo"> <img id="infoButtonRestaurant" class="infoButton" src="./icons/exclamation.png" title="RestaurantInfo"></div>
-                        <div id="restaurantLike"> <img id="favoriteButtonRestaurant" class ="infoButton" src="./icons/heart(3).png"></div>
+                        <div id="restaurantLike"> <img id="favoriteButtonRestaurant" class ="infoButton" src="./icons/heart(3).png" title="Favoriten hinzufügen" onclick="like()"></div>
                     </div>
                 </div> 
                 <div id="restaurantFoodCategories" class="content">
@@ -64,7 +64,7 @@
             <div id = "sidebarContent">
                 
                 <div id="basket" class="basketUnscrolled">
-                    <div id="basketHeader">Warenkorb</div>
+                    <div id="basketHeader"><img class="basketIcon" src="./icons/shopping-bag.png">Warenkorb</div>
                     <div id="basketContent">
                         <table id="basketTable">
                             
@@ -100,13 +100,12 @@
 
 
     <footer>
-        <div  id="footerContent">
-            <div id="footerImage"> bin das footer Image</div>
+        <div  id="footerContent"></div>
             <div id="footerText">Alle Bilder entstammen von www.pixabay.de unter der dortigen Inhaltslizenz.
 
                 UI-Icons von www.flaticon.com:
                 UIcons by <a href="https://www.flaticon.com/uicons">Flaticon</a></div>
-            <div id="footerNavLinks"> Header Nav Links</div>
+            <div id="footerNavLinks"> </div>
         </div>
 
 
