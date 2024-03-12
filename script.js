@@ -267,7 +267,7 @@ function basketCalcHTML(){
      </tr>
      <tr>  
         <td colspan="4">Total</td>
-        <td align=right> ${total.toFixed(2)} €</td> 
+        <td id="totalCost" align=right> ${total.toFixed(2)} €</td> 
      </tr>
      `;
 }
@@ -282,7 +282,7 @@ function basketFootHTML(){
     <div id="basketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
 
     <div id="orderButtonBasketRow">    
-        <div id="orderButtonBasket" class="orderButton" onclick="order()">Jetzt kostenpflichtig bestellen</div>    
+        <div id="orderButtonBasket" class="orderButton" onclick="order()"><img id="orderButtonIcon" src="./icons/truck-moving.png">Jetzt kostenpflichtig bestellen</div>    
     </div>    
     `;}
     else return '';
@@ -356,7 +356,7 @@ function MobileBasketFooterHTML(){
         <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
     
         <div id="mobileOrderButtonBasketRow">    
-            <div id="mobileOrderButtonBasket" class="orderButton" onclick="order()">Jetzt kostenpflichtig bestellen</div>    
+            <div id="mobileOrderButtonBasket" class="orderButton" onclick="order()"><img id="orderButtonIcon" src="./icons/truck-moving.png">Jetzt kostenpflichtig bestellen </div>    
         </div>    
         `;}
         else return '';
@@ -405,7 +405,7 @@ function cleanBasket(){
 function menuAddSymbol(ID){
     if (getIndexOfBasket(ID)>-1){
         return basketMenuAmount[getIndexOfBasket(ID)];
-    } else {return '+'}
+    } else {return '<img id="addSymbol" src="./icons/plus.png">'}
 }
 
 
