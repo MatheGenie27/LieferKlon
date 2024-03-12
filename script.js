@@ -27,54 +27,98 @@ let topPosition;
 
 function scroll(){
     let basket=document.getElementById('basket');
-    
     topPosition = window.scrollY;
-    console.log(topPosition);
-   
-    
-
     if (topPosition >=100 ){
-        console.log("BasketScrolled");
         basket.classList.remove('basketUnscrolled');
         basket.classList.add('basketScrolled');
     } else {
-        console.log("BasketUnscrolled");
         basket.classList.add('basketUnscrolled');
         basket.classList.remove('basketScrolled');
-
     }
 }
-
-
-
-
-
-
 
 //onload Functions
 
 function onload(){
-    loadStorage('content');
-    loadStorage('basket');
+    loadStorage();
     renderContent();
     renderBasket();
     renderFooterToBasket();
-    checkMobileBasket();
-    
-}
-
-
-
+    checkLike();
+} 
 
 
 //LocalStorage
 
-function loadStorage(element){
-
+function loadStorage(){
+ loadLike();
+ loadBasket();
 }
 
 function storeStorage(){
+    storeLike();
+    storeBasket();
+}
 
+function storeLike(){
+
+    let favoriteAsText = JSON.stringify(favorite);
+    console.log("favoriteAstext");
+    localStorage.setItem('like',favoriteAsText);
+}
+
+function storeBasket(){
+    
+    
+    let basketMenuAmountasText =JSON.stringify(basketMenuAmount);
+    let basketMenuIDasText =JSON.stringify(basketMenuID);
+    let summedPriceasText = JSON.stringify(summedPrice);
+    let summedAmountasText = JSON.stringify(summedAmount); 
+    let subtotalasText=JSON.stringify(subtotal);
+    let totalAsText=JSON.stringify(total);
+    let taxAsText=JSON.stringify(tax);
+
+    localStorage.setItem('basketMenuAmount',basketMenuAmountasText);
+    localStorage.setItem('basketMenuID',basketMenuIDasText);
+    localStorage.setItem('summedPrice', summedPriceasText);
+    localStorage.setItem('summedAmount',summedAmountasText);
+    localStorage.setItem('subtotal',subtotalasText);
+    localStorage.setItem('total', totalAsText);
+    localStorage.setItem('tax', taxAsText);
+
+    
+
+}
+
+function loadLike(){
+
+    
+    let favoriteAsText = localStorage.getItem('like');
+    if (favoriteAsText){
+        favorite = JSON.parse(favoriteAsText);
+        }
+}
+
+function loadBasket(){
+   
+    let basketMenuAmountasText = localStorage.getItem('basketMenuAmount');
+    let basketMenuIDasText = localStorage.getItem('basketMenuID');
+    let summedPriceasText = localStorage.getItem('summedPrice');
+    let summedAmountasText =localStorage.getItem('summedAmount'); 
+    let subtotalasText=localStorage.getItem('subtotal');
+    let totalAsText=localStorage.getItem('total');
+    let taxAsText=localStorage.getItem('tax');
+
+    if(basketMenuAmountasText){
+        basketMenuAmount = JSON.parse(basketMenuAmountasText);
+        basketMenuID = JSON.parse(basketMenuIDasText);
+        summedPrice=JSON.parse(summedPriceasText);
+        summedAmount=JSON.parse(summedAmountasText);
+        subtotal=JSON.parse(subtotalasText);
+        total=JSON.parse(totalAsText);
+        tax=JSON.parse(taxAsText)
+    }
+    
 }
 
 //Modals
@@ -214,7 +258,7 @@ function menuContentHTML(index){
 
 function categoryyHTML(index){
     return `
-    <div class="categoryContainer">
+    <div id="${menus[index].categoryName}" class="categoryContainer">
         <div class="categoryImage">
             <img class="categoryImgImg" id="categoryImg${menus[index].categoryName}" src="${menus[index].categoryImage}">
         </div>
@@ -362,6 +406,12 @@ function MobileBasketFooterHTML(){
         else return '';
 }
 
+function menuAddSymbol(ID){
+    if (getIndexOfBasket(ID)>-1){
+        return basketMenuAmount[getIndexOfBasket(ID)];
+    } else {return '<img id="addSymbol" src="./icons/plus.png">'}
+}
+
 //Datenabfrage
 function getMenuName(id){
     for (let i = 0; i < menus.length; i++){
@@ -394,19 +444,16 @@ function cleanBasket(){
     basketMenuAmount=[];
     basketMenuID=[];
     summedPrice=[];
-    summedAmount = 0; 
-    subtotal = 0;
-    total =0;
-    tax =0;
+    summedAmount=0; 
+    subtotal=0;
+    total=0;
+    tax=0;
+    storeBasket();
     
 }
 
 
-function menuAddSymbol(ID){
-    if (getIndexOfBasket(ID)>-1){
-        return basketMenuAmount[getIndexOfBasket(ID)];
-    } else {return '<img id="addSymbol" src="./icons/plus.png">'}
-}
+
 
 
 function addToBasket(thisID){
@@ -428,7 +475,7 @@ function addToBasket(thisID){
     
     
     renderAll();
-    
+    storeBasket();
 
 }
 
@@ -458,8 +505,12 @@ function deleteFromBasket(element){
         basketMenuID.splice(index,1);
     }
 
-    
+    if (basketMenuID.length==0){
+        cleanBasket();
+    }
+
     renderAll();
+    storeBasket();
 }
 
 function calcSummedPrice(){
@@ -519,16 +570,21 @@ function calcTax(){
 
 
 function like(){
-     let img= document.getElementById('favoriteButtonRestaurant');
-    
     if (favorite==true){
-       
-        img.src="./icons/heart(3).png"
         favorite = false;
     } else {
-        img.src="./icons/heart(2).png"
         favorite=true;
     }
+    checkLike();
+    storeLike();
+}
+
+
+function checkLike(){
+    let img= document.getElementById('favoriteButtonRestaurant');
+    if (favorite==true){
+        img.src="./icons/heart(2).png"}
+    else {img.src="./icons/heart(3).png"}    
 }
 
 function order(){

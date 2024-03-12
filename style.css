@@ -126,7 +126,13 @@ main{
         
     position: relative;
     top: -30px;
-    height: 50px;
+    height: 130px;
+    width: 130px;
+    border: 1px solid #638889;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -143,16 +149,47 @@ main{
     justify-content: space-between;
     height: fit-content;
     width: 100%;
+    padding-left:10px;
+    padding-right:10px;
     
 }
 
 #restaurantDetailsLeft{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+    
     gap: 10px;
 }
+
+#restaurantNameName{
+    font-size: 24px;
+}
+
+#restaurantScore{
+    display: flex;
+    align-items: center;
+}
+#starsBundle{
+    display: flex;
+
+}
+
+#scoreDiv{
+    display: flex;
+    align-items: center;
+}
+
+.stars{
+    height: 16px;
+    width:16px;
+}
+
+#diameter{
+    height:20px;
+    width:20px;
+}
+
 
 #restaurantFoodCategories{
     display: flex;
@@ -177,6 +214,15 @@ main{
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px; 
+}
+
+#restaurantFoodCategories a{
+    text-decoration: none;
+    color: #000000;
+    border: 0.2px solid#638889;
+    padding: 5px;
+    border-radius: 8px;
+    background-color: #9DBC98;
 }
 
 #restaurantContent{
@@ -545,6 +591,11 @@ footer{
         display: none;
     }
 
+
+    #restaurantLogo{
+    
+    top: -65px;
+    }
     .menuContainerDescriptionRow{
         flex-direction: column-reverse;
         justify-content: center;
