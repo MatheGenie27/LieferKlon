@@ -42,11 +42,31 @@
                             </div>
                             <div id="scoreDiv"><img id="diameter" src="./icons/diameter.png"> 4,7</div>
                         </div>
+                        <div id="deliveryInfo">
+                            <div id="deliveryTime" title="Lieferzeit">
+                                <img class="infoButtonRest" src="./icons/clock-three.png">
+                                <div class="arrow">ca. 60 Minuten</div>
+                            </div>
+                            <div id="deliveryCost" title="Lieferkosten">
+                                <img class="infoButtonRest" src="./icons/truck-moving.png">
+                                <div class="arrow">2.99 €</div>
+                            </div>    
+                        </div>
                     </div>
-                    <div id="restaurantDetailsRight">
-                        <div id="restaurantInfo"> <img id="infoButtonRestaurant" class="infoButton" src="./icons/exclamation.png" title="RestaurantInfo"></div>
-                        <div id="restaurantLike"> <img id="favoriteButtonRestaurant" class ="infoButton" src="./icons/heart(3).png" title="Favoriten hinzufügen" onclick="like()"></div>
+                    <div id="restaurantDetailsRightAndModal"> 
+                        <div id="infoModal" class="noDisplay">
+                            <div id="infoContainer">
+                                <div > Öffnungszeiten von: <br> 17:00 bis 23:00 Uhr</div>
+                                
+                            </div>
+                        </div>
+                        <div id="restaurantDetailsRight">
+                            <div id="restaurantInfo"> <img id="infoButtonRestaurant" class="infoButton" src="./icons/exclamation.png" title="RestaurantInfo" onclick="info()"></div>
+                            <div id="restaurantLike"> <img id="favoriteButtonRestaurant" class ="infoButton" src="./icons/heart(3).png" title="Favoriten hinzufügen" onclick="like()"></div>
+                        </div>
                     </div>
+                        
+                   
                 </div> 
                 <div id="restaurantFoodCategories" class="content">
                     <div ><a href="#Vorspeisen">Vorspeisen</a></div>
@@ -63,7 +83,15 @@
                 
 
             </div>
-            <div id="restaurantfooter" class="content">Impressum des Restaurants</div>
+            <div id="restaurantfooter" class="content">
+                Impressum von La Casa Nostra<br>
+                Geschäftsführer Max Mustermann<br>
+                <br>
+                Musterstraße 1,<br>
+                99999 Musterstadt<br>
+                <br>
+                01234/567890<br>
+            </div>
 
             
 

@@ -30,7 +30,7 @@ header{
     align-items: center;
     background-color: #9DBC98
     ;
-    box-shadow: 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
     
 }
 
@@ -105,6 +105,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 2px rgba(0,0,0,0.2);
 }
 
 #restaurantImage{
@@ -133,6 +134,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
 
 }
 
@@ -197,7 +199,10 @@ main{
     align-content: center;
 }
 
-
+#restaurantDetailsRightAndModal{
+    display: flex;
+    gap:20px;
+}
 
 #restaurantDetailsRight{
     display: flex;
@@ -206,6 +211,27 @@ main{
     justify-content: center;
 }
 
+#deliveryInfo{
+    display: flex;
+    gap:25px;
+    align-items: center;
+}
+
+#deliveryTime{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+
+#deliveryCost{
+    display: flex;
+    gap:10px;
+    align-items: center;
+}
+
+.arrow:hover{
+    cursor: default;
+}
 
 #restaurantFoodCategories{
     display: flex;
@@ -214,18 +240,25 @@ main{
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px; 
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #restaurantFoodCategories a{
     text-decoration: none;
     color: #000000;
-    border: 0.2px solid#638889;
     padding: 5px;
     border-radius: 8px;
     background-color: #9DBC98;
 }
 
+#restaurantFoodCategories a:hover{
+    background-color: #638889;
+}
+
 #restaurantContent{
+    
+    margin-top:15px;
     background-color: #EBD9B4;
     
     max-width: 1440px;
@@ -236,7 +269,7 @@ main{
     justify-content: flex-start;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    
 }
 
 
@@ -250,6 +283,7 @@ main{
     margin-bottom:5px;
     margin-top:10px;
     background-color: #9DBC98;
+    box-shadow: 1px 2px rgba(0,0,0,0.2)
 
 }
 
@@ -357,6 +391,14 @@ main{
     font-weight: bold;
 }
 
+
+#restaurantfooter{
+    padding-left: 50px;
+    font-size: 12px;
+    margin-top:30px;
+    margin-bottom: 20px;
+}
+
 #sideBar{
     background-color:rgb(175, 70, 70);
     display: flex;
@@ -391,6 +433,7 @@ main{
 
     padding:4px;
     border-radius: 8px;
+    box-shadow: 0px 2px rgba(0,0,0,0.2);
 
  
 
@@ -398,7 +441,7 @@ main{
 
 .basketUnscrolled{
     position: fixed;
-    top:86px;
+    top:88px;
     right: 4px;
     transition: all 0.3s ease-out;
 }
@@ -494,6 +537,7 @@ td{
 
 #orderButtonBasket:hover{
     cursor: pointer;
+    background-color: #9DBC98;
 }
 
 footer{
@@ -523,14 +567,47 @@ footer{
     padding:10px;
 }
 
+.lightGreenBackGround{
+    background-color: #9DBC98;
+}
+
+.infoButtonRest{
+    width:22px;
+    height:22px;
+}
+
 .infoButton:hover{
     cursor: pointer;
+    background-color: #9DBC98;
 }
 
 ::-webkit-scrollbar{
     display: none;
+    
 }
 
+#infoModal{
+    position: static;
+    left: 0;
+    
+}
+
+#infoContainer{
+    height: fit-content;
+    width: fit-content;
+    background-color: #F9EFDB;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 2px 2px rgba(0,0,0,0.2);
+
+
+}
 
 #callToOrder{
     display: flex;
@@ -547,6 +624,10 @@ footer{
     text-decoration: none;
     color: grey;
     font-size: 10px;
+}
+
+.noDisplay{
+    display: none;
 }
 
 @media (max-width: 800px){
@@ -657,6 +738,7 @@ footer{
 
     #buttonToBasket:hover{
         cursor: pointer;
+        background-color: #9DBC98;
     }
     
     #buttonToBasketDescription{
@@ -777,6 +859,7 @@ footer{
 
     #mobileOrderButtonBasket:hover{
         cursor: pointer;
+        background-color: #9DBC98;
     }
 
     
