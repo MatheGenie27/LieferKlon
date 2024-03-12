@@ -58,7 +58,6 @@ function storeStorage() {
 
 function storeLike() {
   let favoriteAsText = JSON.stringify(favorite);
-  console.log("favoriteAstext");
   localStorage.setItem("like", favoriteAsText);
 }
 
@@ -70,7 +69,6 @@ function storeBasket() {
   let subtotalasText = JSON.stringify(subtotal);
   let totalAsText = JSON.stringify(total);
   let taxAsText = JSON.stringify(tax);
-
   localStorage.setItem("basketMenuAmount", basketMenuAmountasText);
   localStorage.setItem("basketMenuID", basketMenuIDasText);
   localStorage.setItem("summedPrice", summedPriceasText);
@@ -95,7 +93,6 @@ function loadBasket() {
   let subtotalasText = localStorage.getItem("subtotal");
   let totalAsText = localStorage.getItem("total");
   let taxAsText = localStorage.getItem("tax");
-
   if (basketMenuAmountasText) {
     basketMenuAmount = JSON.parse(basketMenuAmountasText);
     basketMenuID = JSON.parse(basketMenuIDasText);
@@ -341,13 +338,8 @@ function mobileBasketHTML() {}
 function MobileBasketFooterHTML() {
   if (subtotal > 0) {
     return `
-       
-    
-        <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(
-          2
-        )} €.</div>
-    
-        <div id="mobileOrderButtonBasketRow">    
+       <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
+       <div id="mobileOrderButtonBasketRow">    
             <div id="mobileOrderButtonBasket" class="orderButton" onclick="order()"><img id="orderButtonIcon" src="./icons/truck-moving.png">Jetzt kostenpflichtig bestellen </div>    
         </div>    
         `;
@@ -408,7 +400,6 @@ function addToBasket(thisID) {
       }
     }
   }
-
   renderAll();
   storeBasket();
 }
@@ -436,7 +427,6 @@ function deleteFromBasket(element) {
   if (basketMenuID.length == 0) {
     cleanBasket();
   }
-
   renderAll();
   storeBasket();
 }
@@ -539,7 +529,7 @@ function confirmOrder() {
 
 function sorry() {
   alert(
-    "LieferKlon verfügt noch über keine Funktionalität zum Erstellen eines Accounts oder zur Auswahl anderer Restaurant. Sorry."
+    "LieferKlon verfügt noch über keine Funktionalität zum Erstellen eines Accounts oder zur Auswahl anderer Restaurants. Sorry."
   );
 }
 
