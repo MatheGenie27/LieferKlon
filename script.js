@@ -12,6 +12,42 @@ let deliveryCost = 2.99;
 let total;
 let tax;
 
+//Scrollposition
+let topPosition;
+
+
+
+
+//FUnktionen
+
+//Scrollposition ermitteln
+
+function scroll(){
+    let basket=document.getElementById('basket');
+    
+    topPosition = window.scrollY;
+    console.log(topPosition);
+   
+    
+
+    if (topPosition >=100 ){
+        console.log("BasketScrolled");
+        basket.classList.remove('basketUnscrolled');
+        basket.classList.add('basketScrolled');
+    } else {
+        console.log("BasketUnscrolled");
+        basket.classList.add('basketUnscrolled');
+        basket.classList.remove('basketScrolled');
+
+    }
+}
+
+
+
+
+
+
+
 //onload Functions
 
 function onload(){
@@ -23,6 +59,9 @@ function onload(){
     checkMobileBasket();
     
 }
+
+
+
 
 
 //LocalStorage
@@ -337,7 +376,6 @@ function getMenuName(id){
 
 //Blendet den WarenknorbButton in der mobilen Ansicht aus und ein
 function checkMobileBasket(){
-    console.log(summedAmount);
     if(summedAmount > 0){
         document.getElementById('mobileFooterBasket').classList.remove('noDisplay');
         document.getElementById('footerToBasket').classList.remove('noDisplay');
