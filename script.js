@@ -114,7 +114,7 @@ function openModalBasket() {
 
 function closeModalBasket() {
   document.getElementById("modalBasket").classList.add("noDisplay");
-  document.getElementById("modalBasket").innerHTML = "";
+  document.getElementById("modalBasketContent").innerHTML = "";
 }
 
 //renderFunctions
@@ -332,8 +332,6 @@ function mobileBasketHeadandTableAndFooter() {
     </div>
     `;
 }
-
-function mobileBasketHTML() {}
 
 function MobileBasketFooterHTML() {
   if (subtotal > 0) {

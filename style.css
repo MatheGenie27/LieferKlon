@@ -1,869 +1,872 @@
 /* roboto-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url('./fonts/roboto-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  }
-  
-
-
-
-html{
-    scroll-behavior: smooth;
-    
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/roboto-v30-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-body{
-    margin:0;
-    background-color: #EBD9B4;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-
+html {
+  scroll-behavior: smooth;
 }
 
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #9DBC98
-    ;
-    box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
-    
+body {
+  margin: 0;
+  background-color: #ebd9b4;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
 }
 
-#headerImageImage{
-    width:50px;
-    height:50px;
-    object-fit: fill;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9dbc98;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-#headerImageImage:hover{
-    cursor: pointer;
-}
-
-#headerText{
+#headerTitle{
     font-size: 30px;
 }
 
-#headerNav{
-    width: 26px;
-    height:26px;
-    object-fit: fill;
-}
-
-#headerNav:hover{
-    cursor: pointer;
-}
-
-.content{
-    
-    
-    width: 100%;
-    max-width: 1440px;
-    
-}
-
-#headerContent{
+#SiteName{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width:100%;
-    padding-left: 50px;
-    padding-right: 50px;
-    height: 86px;
+    gap:5px;
 }
 
-
-main{
-    background-color:0 #EBD9B4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+#headerImageImage {
+  width: 50px;
+  height: 50px;
+  object-fit: fill;
 }
 
-
-
-#mainContent{
-    background-color: #EBD9B4;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    
+#headerImageImage:hover {
+  cursor: pointer;
 }
 
-#restaurantHeader{
-    background-color:#F9EFDB;
-    height: fit-content;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 2px rgba(0,0,0,0.2);
+#headerText {
+  font-size: 30px;
 }
 
-#restaurantImage{
-    background-color: #EBD9B4;
-    width:100%;
-    
-    
+#headerNav {
+  width: 26px;
+  height: 26px;
+  object-fit: fill;
 }
 
-#restaurantImgImg{
-    width:100%;
-    height:500px;
-    object-fit: cover;
+#headerNav:hover {
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+}
+
+#headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 86px;
+}
+
+main {
+  background-color: 0 #ebd9b4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+#mainContent {
+  background-color: #ebd9b4;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#restaurantHeader {
+  background-color: #f9efdb;
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+#restaurantImage {
+  background-color: #ebd9b4;
+  width: 100%;
+}
+
+#restaurantImgImg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 /* Soll das Logo in der Mitte sitzen?!? */
-#restaurantLogo{
-    background-color: #EBD9B4;
-        
-    position: relative;
-    top: -30px;
-    height: 130px;
-    width: 130px;
-    border: 1px solid #638889;
-    border-radius: 100%;
-    display: flex;
+#restaurantLogo {
+  background-color: #ebd9b4;
+
+  position: relative;
+  top: -30px;
+  height: 130px;
+  width: 130px;
+  border: 1px solid #638889;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#restaurantLogoLogo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#restaurantDetails {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#restaurantDetailsLeft {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+#restaurantNameName {
+  font-size: 24px;
+}
+
+#restaurantScore {
+  display: flex;
+  align-items: center;
+}
+#starsBundle {
+  display: flex;
+}
+
+#scoreDiv {
+  display: flex;
+  align-items: center;
+}
+
+.stars {
+  height: 16px;
+  width: 16px;
+}
+
+#diameter {
+  height: 20px;
+  width: 20px;
+}
+
+#restaurantFoodCategories {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#restaurantDetailsRightAndModal {
+  display: flex;
+  gap: 20px;
+}
+
+#restaurantDetailsRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#deliveryInfo {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+#deliveryTime {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#deliveryCost {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.arrow:hover {
+  cursor: default;
+}
+
+#restaurantFoodCategories {
+  display: flex;
+  width: 98%;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+#restaurantFoodCategories a {
+  text-decoration: none;
+  color: #000000;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #9dbc98;
+}
+
+#restaurantFoodCategories a:hover {
+  background-color: #638889;
+}
+
+#restaurantContent {
+  margin-top: 15px;
+  background-color: #ebd9b4;
+
+  max-width: 1440px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.categoryContainer {
+  width: 98%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  background-color: #9dbc98;
+  box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.categoryImage {
+  width: 100%;
+
+  border-radius: 8px;
+}
+
+.categoryImgImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.categoryName {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+}
+
+.menuContainer {
+  max-width: 98%;
+  width: 98%;
+  height: fit-content;
+  background-color: #f9efdb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 5px;
+}
+
+.menuContainerHeadRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.menuContainerHeadName {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menuContainerAddButton {
+  min-height: 26px;
+  min-width: 26px;
+  background-color: #638889;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+#addSymbol {
+  width: 16px;
+}
+
+#minusSymbol {
+  width: 16px;
+}
+
+.menuContainerAddButton:hover {
+  cursor: pointer;
+}
+
+.menuContainerDescriptionRow {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.menuImage {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  background-color: pink;
+  border-radius: 8px;
+}
+
+.menuContainerPriceRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menuContainerPrice {
+  font-weight: bold;
+}
+
+#restaurantfooter {
+  padding-left: 50px;
+  font-size: 12px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#sideBar {
+  background-color: rgb(175, 70, 70);
+  display: flex;
+  flex-direction: column;
+  width: 344px;
+
+  min-height: 100;
+  position: relative;
+  right: 0;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+#sidebarContent {
+  height: 100%;
+}
+
+#basket {
+  width: 328px;
+  min-height: 300px;
+  height: fit-content;
+
+  background-color: #f9efdb;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: hidden;
+
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.basketUnscrolled {
+  position: fixed;
+  top: 88px;
+  right: 4px;
+  transition: all 0.3s ease-out;
+}
+
+.basketScrolled {
+  position: fixed;
+  top: 02px;
+  right: 4px;
+  transition: all 0.3s ease-out;
+}
+
+#basketHeader {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.basketIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: cover;
+}
+
+.amountButtonBasket {
+  width: 26px;
+  height: 26px;
+  border-radius: 100%;
+  background-color: #638889;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.amountButtonBasket:hover {
+  cursor: pointer;
+}
+
+#basketTable {
+  width: 328px;
+}
+
+td {
+  margin-bottom: 5px;
+}
+
+#basketFoot {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  font-size: 14px;
+  color: grey;
+}
+
+#totalCost {
+  font-weight: bold;
+  border-bottom: double 3px #000000;
+}
+
+#orderButtonBasketRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#orderButtonBasket {
+  background-color: #638889;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+#orderButtonIcon {
+  width: 22px;
+  height: 22px;
+  object-fit: fill;
+}
+
+#orderButtonBasket:hover {
+  cursor: pointer;
+  background-color: #9dbc98;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9dbc98;
+}
+
+#footerContent {
+  height: 86px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mobileFooterBasket {
+  display: none;
+}
+
+.infoButton {
+  width: 22px;
+  height: 22px;
+  background-color: #638889;
+  border-radius: 40%;
+  padding: 10px;
+}
+
+.lightGreenBackGround {
+  background-color: #9dbc98;
+}
+
+.infoButtonRest {
+  width: 22px;
+  height: 22px;
+}
+
+.infoButton:hover {
+  cursor: pointer;
+  background-color: #9dbc98;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#infoModal {
+  position: static;
+  left: 0;
+}
+
+#infoContainer {
+  height: fit-content;
+  width: fit-content;
+  background-color: #f9efdb;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+  justify-content: center;
+  padding: 10px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#callToOrder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footerText {
+  color: grey;
+  font-size: 10px;
+}
+
+.footerLink {
+  text-decoration: none;
+  color: grey;
+  font-size: 10px;
+}
+
+.noDisplay {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .noDisplay {
+    display: none;
+  }
+
+  html {
+    width: 100%;
+  }
+
+  .content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #headerContent{
+    padding-left: 5px;
+    padding-right:5px;
+  }
+
+  #headerTitle{
+    font-size: 22px;
+  }
+
+  #headerImage{
+    font-size: 15px;
+  }
+
+  #headerImageImage{
+    height: 25px;
+    width: 25px;
+  }
+
+  #SiteName{
+    font-size: 20px;
+  }
+
+  #headerText{
+    font-size: 25px;
+  }
+
+  #headerNavLinks {
+    font-size: 10px;
+  }
+
+  #sideBar {
+    display: none;
+    width: 0;
+  }
+
+  #sidebarContent {
+    width: 0;
+  }
+
+  #basket {
+    width: 0;
+  }
+
+  footer {
+    display: none;
+  }
+
+  #restaurantLogo {
+    top: -65px;
+  }
+
+  #restaurantDetails{
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  
+
+  #restaurantNameMotto{
+    font-size: 12px;
+  }
+
+  #deliveryTime{
+    font-size: 14px;
+  }
+
+  #deliveryCost{
+    font-size: 14px;
+  }
+
+  .infoButtonRest{
+    width: 14px;
+    height: 14px;
+  }
+
+  .menuContainerDescriptionRow {
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px rgba(0,0,0,0.2);
+  }
 
-}
+  .menuContainerDescriptionText {
+    width: 90%;
+  }
 
-#restaurantLogoLogo{
-    width:100px;
-    height:100px;
-    object-fit: cover;
-}
+  .menuContainerPriceRow {
+    justify-content: center;
+  }
 
-#restaurantDetails{
-    display: flex;
-    
-    align-items: center;
-    justify-content: space-between;
-    height: fit-content;
+  .menuImage {
     width: 100%;
-    padding-left:10px;
-    padding-right:10px;
-    
-}
+  }
 
-#restaurantDetailsLeft{
+  #mobileFooterBasket {
     display: flex;
-    flex-direction: column;
-    
-    
+    width: 100%;
+    min-height: 20vh;
+    background-color: #ebd9b4;
+    position: sticky;
+    bottom: 0;
+  }
+
+  #mobileBasketHead {
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
-}
+  }
 
-#restaurantNameName{
-    font-size: 24px;
-}
-
-#restaurantScore{
+  #footerToBasket {
     display: flex;
+    width: 98%;
+    min-height: 100%;
     align-items: center;
-}
-#starsBundle{
-    display: flex;
+    justify-content: center;
+  }
 
-}
-
-#scoreDiv{
-    display: flex;
-    align-items: center;
-}
-
-.stars{
-    height: 16px;
-    width:16px;
-}
-
-#diameter{
-    height:20px;
-    width:20px;
-}
-
-
-#restaurantFoodCategories{
+  #buttonToBasket {
+    background-color: #638889;
+    color: white;
+    width: 75%;
+    height: 65%;
     display: flex;
     justify-content: center;
     align-content: center;
-}
+    flex-wrap: wrap;
+    border-radius: 20px;
+  }
 
-#restaurantDetailsRightAndModal{
-    display: flex;
-    gap:20px;
-}
-
-#restaurantDetailsRight{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-#deliveryInfo{
-    display: flex;
-    gap:25px;
-    align-items: center;
-}
-
-#deliveryTime{
-    display: flex;
-    gap:10px;
-    align-items: center;
-}
-
-#deliveryCost{
-    display: flex;
-    gap:10px;
-    align-items: center;
-}
-
-.arrow:hover{
-    cursor: default;
-}
-
-#restaurantFoodCategories{
-    display: flex;
-    width: 98%;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px; 
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-#restaurantFoodCategories a{
-    text-decoration: none;
-    color: #000000;
-    padding: 5px;
-    border-radius: 8px;
-    background-color: #9DBC98;
-}
-
-#restaurantFoodCategories a:hover{
-    background-color: #638889;
-}
-
-#restaurantContent{
-    
-    margin-top:15px;
-    background-color: #EBD9B4;
-    
-    max-width: 1440px;
-    width: 100%;
-     
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
-    
-}
-
-
-.categoryContainer{
-    width: 98%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    border-radius: 8px;
-    margin-bottom:5px;
-    margin-top:10px;
-    background-color: #9DBC98;
-    box-shadow: 1px 2px rgba(0,0,0,0.2)
-
-}
-
-.categoryImage{
-    width: 100%;
-    
-    border-radius: 8px;
-}
-
-.categoryImgImg{
-    width: 100%;
-    height:200px;
-    object-fit:cover;
-    border-radius: 8px;
-}
-
-.categoryName{
-    display: flex;
-    width: 100%;
-    height: 10%;
-    justify-content: center;
-    align-items:center ;
-    font-size: 26px;
-    
-}
-
-.menuContainer{
-    max-width:98%;
-    width: 98%;
-    height: fit-content;
-    background-color: #F9EFDB;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    padding:5px;
-    gap:5px;
-    
-}
-
-.menuContainerHeadRow{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: fit-content;
-    
-}
-
-.menuContainerHeadName{
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.menuContainerAddButton{
-    height:26px;
-    width:26px;
-    background-color: #638889;
-    border-radius: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-
-}
-
-#addSymbol{
-    width:16px;
-}
-
-#minusSymbol{
- width:16px;
-}
-
-.menuContainerAddButton:hover{
+  #buttonToBasket:hover {
     cursor: pointer;
-}
+    background-color: #9dbc98;
+  }
 
-.menuContainerDescriptionRow{
-    display: flex;
-    justify-content: space-between;
-    padding-left:0;
-    padding-right:10px;
-
-    
-}
-
-.menuImage{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    background-color: pink;
-    border-radius: 8px;
-    
-    
-}
-
-.menuContainerPriceRow{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.menuContainerPrice{
-    font-weight: bold;
-}
-
-
-#restaurantfooter{
-    padding-left: 50px;
-    font-size: 12px;
-    margin-top:30px;
-    margin-bottom: 20px;
-}
-
-#sideBar{
-    background-color:rgb(175, 70, 70);
-    display: flex;
-    flex-direction: column;
-    width: 344px;
-    
-    min-height:100;
-    position: relative;
-    right: 0;
-    flex-shrink: 0;
-    align-items: center;
-    
-}
-
-#sidebarContent{
-    height: 100%;
-}
-
-#basket{
-    width: 328px;
-    min-height: 300px;
-    height: fit-content;
-    
-    background-color: #F9EFDB;
-   
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-y:hidden;
-
-    padding:4px;
-    border-radius: 8px;
-    box-shadow: 0px 2px rgba(0,0,0,0.2);
-
- 
-
-}
-
-.basketUnscrolled{
-    position: fixed;
-    top:88px;
-    right: 4px;
-    transition: all 0.3s ease-out;
-}
-
-.basketScrolled{
-    position: fixed;
-    top:02px;
-    right: 4px;
-    transition: all 0.3s ease-out;
-}
-
-
-#basketHeader{
-    padding-top: 5px;
-    padding-bottom:10px;
-    font-size: 26px;
+  #buttonToBasketDescription {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap:10px;
-}
-
-.basketIcon{
-    width: 22px;
-    height:22px;
-    object-fit: cover;
-
-}
-
-.amountButtonBasket{
-    width: 26px;
-    height: 26px;
-    border-radius: 100%;
-    background-color: #638889;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-
-}
-
-.amountButtonBasket:hover{
-    cursor: pointer;
-}
-
-#basketTable{
-    width: 328px;
-}
-
-td{
-    margin-bottom: 5px;
-}
-
-#basketFoot{
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-    font-size: 14px;
-    color: grey;
-}
-
-#totalCost{
-    font-weight: bold;
-    border-bottom: double 3px #000000;
-}
-
-#orderButtonBasketRow{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width:100%;
-    padding-top: 15px;
-    padding-bottom:15px;
-}
-
-#orderButtonBasket{
-    background-color: #638889;
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:20px;
+    justify-content: space-around;
     width: 100%;
-}
+  }
 
-#orderButtonIcon{
-    width: 22px;
-    height:22px;
-    object-fit: fill;
-}
-
-#orderButtonBasket:hover{
-    cursor: pointer;
-    background-color: #9DBC98;
-}
-
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #9DBC98;
-}
-
-#footerContent{
-    height: 86px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#mobileFooterBasket{
-    display: none;
-}
-
-
-.infoButton{
-    width:22px;
-    height: 22px;
-    background-color: #638889;
-    border-radius: 40%;
-    padding:10px;
-}
-
-.lightGreenBackGround{
-    background-color: #9DBC98;
-}
-
-.infoButtonRest{
-    width:22px;
-    height:22px;
-}
-
-.infoButton:hover{
-    cursor: pointer;
-    background-color: #9DBC98;
-}
-
-::-webkit-scrollbar{
-    display: none;
-    
-}
-
-#infoModal{
-    position: static;
-    left: 0;
-    
-}
-
-#infoContainer{
+  #buttonToBasketText {
     height: fit-content;
     width: fit-content;
-    background-color: #F9EFDB;
-    border: 1px solid #000000;
-    border-radius: 8px;
+    font-size: 26px;
+  }
+
+  #basketIconmobileFooter {
+    width: 50px;
+    height: 50px;
+  }
+
+  #mobileFooterToBasketAmount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    background-color: #9dbc98;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
+
+  #modalBasket {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #f9efdb;
+    z-index: 100;
+    height: 10000vh;
+  }
+
+  #modalBasketContent {
+    position: sticky;
+    top: 5px;
+    width: 100%;
+  }
+
+  #mobileBasketContainer {
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: start;
-    justify-content: center;
+    align-items: center;
+  }
+
+  #mobileBasketFooter {
     padding: 10px;
-    box-shadow: 2px 2px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 
+  #mobileBasketHead {
+    margin-bottom: 10px;
+  }
 
-}
+  #modalCloseIcon {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    margin-bottom: 10px;
+  }
 
-#callToOrder{
+  #modalCloseIcon:hover {
+    cursor: pointer;
+  }
+
+  #mobileBasketFoot {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #mobileOrderButtonBasketRow {
     display: flex;
     justify-content: center;
-    align-items: center;       
-}
+    align-items: center;
+  }
 
-#footerText{
-    color: grey;
+  #mobileOrderButtonBasket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #638889;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 10px;
+    gap: 20px;
+    width: 70%;
+  }
+
+  #mobileOrderButtonBasket:hover {
+    cursor: pointer;
+    background-color: #9dbc98;
+  }
+
+  #infoContainer {
     font-size: 10px;
-}
+  }
 
-.footerLink{
-    text-decoration: none;
-    color: grey;
-    font-size: 10px;
-}
-
-.noDisplay{
-    display: none;
-}
-
-@media (max-width: 800px){
-     .noDisplay{
-        display: none;
-    }
-    
-    html{
-        width:100%;
-    }
-
-    .content{
+  #restaurantfooter{
+    max-width:100%;
     padding-left: 0;
-    padding-right:0;
-    }
+    text-align: center;
+  }
 
-    #headerImage{
-        font-size: 15px;
-    }
+  table{
+    font-size: 13px;
+  }
+  
+  #mobileBasketFoot{
+    font-size: 10px;
+    color: grey;
+  }
 
-    #headerNavLinks{
-        font-size: 10px;
-    }
-
-
-    #sideBar{
-        display: none;
-        width:0;
-        
-         
-    }
-
-    #sidebarContent{
-        width:0;
-    }
-
-    #basket{
-        width:0;
-    }
-
-    footer{
-        display: none;
-    }
-
-
-    #restaurantLogo{
-    
-    top: -65px;
-    }
-    .menuContainerDescriptionRow{
-        flex-direction: column-reverse;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .menuContainerDescriptionText{
-        width: 90%;
-    }
-    
-    .menuContainerPriceRow{
-        justify-content: center;
-    }
-
-    .menuImage{
-        width:100%;
-        
-    }
-    
-    
-    #mobileFooterBasket{
-        display: flex;
-        width: 100%;
-        min-height: 20vh;
-        background-color: #EBD9B4;
-        position: sticky;
-        bottom: 0;
-
-    }
-
-    #mobileBasketHead{
-        font-size: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap:10px;
-    }
-
-    #footerToBasket{
-        display: flex;
-        width:98%;
-        min-height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #buttonToBasket{
-        background-color: #638889;
-        color: white;
-        width: 75%;
-        height: 65%;
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-        border-radius: 20px;
-    }
-
-
-    #buttonToBasket:hover{
-        cursor: pointer;
-        background-color: #9DBC98;
-    }
-    
-    #buttonToBasketDescription{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-
-    }
-
-
-
-    #buttonToBasketText{
-        height: fit-content;
-        width: fit-content;
-        font-size: 26px;
-        
-    }
-
-    #basketIconmobileFooter{
-        width:50px;
-        height: 50px;
-        
-    }
-
-    #mobileFooterToBasketAmount{
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        font-weight: bold;
-        background-color: #9DBC98;
-        width:50px;
-        height:50px;
-        border-radius: 100%;
-        
-        
-        
-    }
-
-    #modalBasket{
-        position: absolute;
-        top:0;
-        bottom:0;
-        right:0;
-        left:0;
-        background-color: #F9EFDB;
-        z-index: 100;
-        height:10000vh;
-        
-    }
-
-    #modalBasketContent{
-        position: sticky;
-        top: 5px;
-        width:100%;
-    }
-
-
-    #mobileBasketContainer{
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-
-    #mobileBasketFooter{
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    #mobileBasketHead{
-        margin-bottom:10px;
-    }
-
-    #modalCloseIcon{
-        width: 40px;
-        height:40px;
-        margin:20px;
-        margin-bottom:50px;
-
-    }
-
-    #modalCloseIcon:hover{
-        cursor: pointer;
-    }
-
-    #mobileBasketFoot{
-        margin-top:10px;
-        margin-bottom:10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #mobileOrderButtonBasketRow{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #mobileOrderButtonBasket{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #638889;
-        padding: 15px;
-        border-radius: 8px;
-        font-weight: bold;
-        margin-top:30px;
-        gap:20px;
-        width:70%;
-    }
-
-    #mobileOrderButtonBasket:hover{
-        cursor: pointer;
-        background-color: #9DBC98;
-    }
-
-    
 }
-
-
-
