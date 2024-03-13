@@ -697,6 +697,14 @@ footer {
     height: 14px;
   }
 
+  .menuContainer{
+    max-width: 95%;
+  }
+
+  .categoryContainer{
+    max-width:95%;
+  }
+
   .menuContainerDescriptionRow {
     flex-direction: column-reverse;
     justify-content: center;
