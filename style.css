@@ -51,6 +51,11 @@ header {
   font-size: 30px;
 }
 
+#headerNavLinks{
+  max-width: 150px;
+  width:100%;
+}
+
 #headerNav {
   width: 26px;
   height: 26px;
@@ -322,13 +327,23 @@ main {
 .menuContainerAddButton {
   min-height: 26px;
   min-width: 26px;
-  background-color: #638889;
+  background-color: #9dbc98;
   border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: bold;
+}
+
+.menuContainerAddButton:hover{
+    background-color: #638889;
+    color: white;
+}
+
+.menuContainerAddButtonChecked{
+  background-color: #638889;
+  color: white;
 }
 
 #addSymbol {
@@ -487,7 +502,7 @@ td {
 }
 
 #orderButtonBasket {
-  background-color: #638889;
+  background-color: #9dbc98;
   padding: 10px;
   border-radius: 8px;
   display: flex;
@@ -505,7 +520,7 @@ td {
 
 #orderButtonBasket:hover {
   cursor: pointer;
-  background-color: #9dbc98;
+  background-color: #638889;
 }
 
 footer {
@@ -529,13 +544,13 @@ footer {
 .infoButton {
   width: 22px;
   height: 22px;
-  background-color: #638889;
+  background-color: #9dbc98;
   border-radius: 40%;
   padding: 10px;
 }
 
 .lightGreenBackGround {
-  background-color: #9dbc98;
+  background-color: #638889;
 }
 
 .infoButtonRest {
@@ -545,7 +560,7 @@ footer {
 
 .infoButton:hover {
   cursor: pointer;
-  background-color: #9dbc98;
+  background-color: #638889;
 }
 
 ::-webkit-scrollbar {
@@ -752,7 +767,7 @@ footer {
   #buttonToBasketText {
     height: fit-content;
     width: fit-content;
-    font-size: 26px;
+    font-size: 16px;
   }
 
   #basketIconmobileFooter {
@@ -767,8 +782,8 @@ footer {
     color: black;
     font-weight: bold;
     background-color: #9dbc98;
-    width: 50px;
-    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
     border-radius: 100%;
   }
 
@@ -867,6 +882,24 @@ footer {
   #mobileBasketFoot{
     font-size: 10px;
     color: grey;
+  }
+
+  #headerNavLinks{
+    width:fit-content;
+  }
+
+  #scoreDiv{
+    font-size: 14px;
+  }
+
+  .stars{
+    width: 14px;
+    height: 14px;
+  }
+
+  #diameter{
+    width:16px;
+    height:16px;
   }
 
 }

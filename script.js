@@ -42,6 +42,7 @@ function onload() {
   renderBasket();
   renderFooterToBasket();
   checkLike();
+  renderMenuAddButtons();
 }
 
 //LocalStorage
@@ -119,6 +120,19 @@ function closeModalBasket() {
 
 //renderFunctions
 
+function renderAll() {
+  calcBasket();
+
+  renderBasket();
+
+  if (document.getElementById("modalBasket").className != "noDisplay") {
+    renderMobileBasket();
+  }
+  renderContent();
+  renderFooterToBasket();
+  renderMenuAddButtons();
+}
+
 function renderContent() {
   let content = document.getElementById("restaurantContent");
   content.innerHTML = ``;
@@ -186,6 +200,22 @@ function renderFooterToBasket() {
   let content = document.getElementById("footerToBasket");
   content.innerHTML = "";
   content.innerHTML += footerToBasketHTML();
+}
+
+function renderMenuAddButtons() {
+  for (let index = 0; index < menus.length; index++) {
+    if (menus[index].type == "menu") {
+      if (getIndexOfBasket(menus[index].menuID) > -1) {
+        document
+          .getElementById(`addButton${menus[index].menuID}`)
+          .classList.add("menuContainerAddButtonChecked");
+      } else {
+        document
+          .getElementById(`addButton${menus[index].menuID}`)
+          .classList.remove("menuContainerAddButtonChecked");
+      }
+    }
+  }
 }
 
 //templateHTML
@@ -336,7 +366,9 @@ function mobileBasketHeadandTableAndFooter() {
 function MobileBasketFooterHTML() {
   if (subtotal > 0) {
     return `
-       <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(2)} €.</div>
+       <div id="mobileBasketFoot">Diese Summe beinhaltet 7% Mehrwertsteuer in Höhe von ${tax.toFixed(
+         2
+       )} €.</div>
        <div id="mobileOrderButtonBasketRow">    
             <div id="mobileOrderButtonBasket" class="orderButton" onclick="order()"><img id="orderButtonIcon" src="./icons/truck-moving.png">Jetzt kostenpflichtig bestellen </div>    
         </div>    
@@ -361,19 +393,17 @@ function getMenuName(id) {
   }
 }
 
-//Datenmanipulation
-
-function renderAll() {
-  calcBasket();
-
-  renderBasket();
-
-  if (document.getElementById("modalBasket").className != "noDisplay") {
-    renderMobileBasket();
+function getIndexOfBasket(ID) {
+  for (let index = 0; index < basketMenuID.length; index++) {
+    if (basketMenuID[index] == ID) {
+      console.log();
+      return index;
+    }
   }
-  renderContent();
-  renderFooterToBasket();
+  return -1;
 }
+
+//Datenmanipulation
 
 function cleanBasket() {
   basketMenuAmount = [];
@@ -400,16 +430,6 @@ function addToBasket(thisID) {
   }
   renderAll();
   storeBasket();
-}
-
-function getIndexOfBasket(ID) {
-  for (let index = 0; index < basketMenuID.length; index++) {
-    if (basketMenuID[index] == ID) {
-      console.log();
-      return index;
-    }
-  }
-  return -1;
 }
 
 function deleteFromBasket(element) {
