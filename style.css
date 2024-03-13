@@ -910,4 +910,12 @@ footer {
     height:16px;
   }
 
+  .infoButton:hover{
+      background-color: #9dbc98;
+  }
+
+  #restaurantFoodCategories a:hover{
+    background-color: #9dbc98;
+  }
+
 }
